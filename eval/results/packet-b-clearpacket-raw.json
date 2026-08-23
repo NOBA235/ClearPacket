@@ -1,0 +1,1208 @@
+[
+  {
+    "findings": [
+      {
+        "id": "finding-1-q9bsx5",
+        "requirementId": "req-category-certificate",
+        "severity": "review",
+        "category": "required_document",
+        "title": "Possibly missing: category_certificate (conditional)",
+        "explanation": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "affectedDocuments": [],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "confidence": 0.95,
+        "status": "human_review",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-2-74vel7",
+        "requirementId": "req-doc-residence",
+        "severity": "critical",
+        "category": "required_document",
+        "title": "Missing required document: residence_certificate",
+        "explanation": "The requirements state this document is mandatory, but no document of this type was found in the packet.",
+        "affectedDocuments": [],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "Residence Certificate confirming domicile in Nagaland.",
+        "confidence": 0.98,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-3-3t0168",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "cross_document_consistency",
+        "title": "Conflicting full name across documents",
+        "explanation": "Different documents report different values for full name: \"Wonthong Yeptho\" (b-form) vs \"Wonthong T. Yeptho\" (b-id) vs \"Wonthong Yeptho\" (b-transcript).",
+        "affectedDocuments": [
+          "b-form",
+          "b-id",
+          "b-transcript"
+        ],
+        "evidenceFactIds": [
+          "b-f1",
+          "b-f4",
+          "b-f6"
+        ],
+        "sourceRequirementEvidence": null,
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-4-yaa8yj",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "cross_document_consistency",
+        "title": "Conflicting date of birth across documents",
+        "explanation": "Different documents report different values for date of birth: \"2003-07-17\" (b-form) vs \"2003-07-14\" (b-id).",
+        "affectedDocuments": [
+          "b-form",
+          "b-id"
+        ],
+        "evidenceFactIds": [
+          "b-f2",
+          "b-f5"
+        ],
+        "sourceRequirementEvidence": null,
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-5-j3gbr9",
+        "requirementId": "req-field-gpa",
+        "severity": "warning",
+        "category": "field_rule",
+        "title": "gpa or marks does not meet stated rule",
+        "explanation": "Requirement expects gpa_or_marks gte \"6\", but the packet shows \"5.4\" (b-transcript).",
+        "affectedDocuments": [
+          "b-transcript"
+        ],
+        "evidenceFactIds": [
+          "b-f7"
+        ],
+        "sourceRequirementEvidence": "The applicant must have obtained a minimum aggregate of 6.0 CGPA (or 60%) in the most\n    recent academic year.",
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-6-en1qa3",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "document_validity",
+        "title": "Expired document: income certificate",
+        "explanation": "This document's expiry date (31/01/2026) is before the audit date (2026-03-15).",
+        "affectedDocuments": [
+          "b-income"
+        ],
+        "evidenceFactIds": [
+          "b-f10"
+        ],
+        "sourceRequirementEvidence": null,
+        "confidence": 0.89,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-7-fa2xfk",
+        "requirementId": "req-field-financial-year",
+        "severity": "critical",
+        "category": "field_rule",
+        "title": "Wrong financial year on income/bank document",
+        "explanation": "Requirement specifies financial year 2025-26; document \"b-income\" shows 2024-25.",
+        "affectedDocuments": [
+          "b-income"
+        ],
+        "evidenceFactIds": [
+          "b-f9"
+        ],
+        "sourceRequirementEvidence": "The Income Certificate must be issued for financial year 2025-26.",
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-8-9t07g6",
+        "requirementId": "req-format-file-types",
+        "severity": "critical",
+        "category": "format",
+        "title": "Unsupported file format: voter-id.heic",
+        "explanation": "File type \"image/heic\" is not in the accepted formats (application/pdf, image/jpeg, image/png).",
+        "affectedDocuments": [
+          "b-id"
+        ],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "All documents must be submitted as PDF, JPEG, or PNG files no larger than 10 MB each.",
+        "confidence": 1,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-9-f4ut2z",
+        "requirementId": "req-format-transcript-pages",
+        "severity": "critical",
+        "category": "format",
+        "title": "Missing page(s): transcript",
+        "explanation": "Requirement expects 2 page(s); b-transcript has 1.",
+        "affectedDocuments": [
+          "b-transcript"
+        ],
+        "evidenceFactIds": [
+          "b-f8"
+        ],
+        "sourceRequirementEvidence": "The Academic Transcript must include both pages; a single-page transcript will not be\n    accepted.",
+        "confidence": 0.99,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-10-lm160k",
+        "requirementId": "req-signature-form",
+        "severity": "critical",
+        "category": "signature",
+        "title": "Missing signature: application form",
+        "explanation": "No signature was detected on this document (confidence 0.88).",
+        "affectedDocuments": [
+          "b-form"
+        ],
+        "evidenceFactIds": [
+          "b-f3"
+        ],
+        "sourceRequirementEvidence": "The Application Form must bear the applicant's signature.",
+        "confidence": 0.88,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-11-8reyet",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "cross_document_consistency",
+        "title": "Bank account holder name does not match applicant name",
+        "explanation": "The application identifies the applicant as \"Wonthong Yeptho\", but the bank document lists the account holder as \"W. Yeptho\". The notice requires the bank document to be in the applicant's own name.",
+        "affectedDocuments": [
+          "b-bank"
+        ],
+        "evidenceFactIds": [
+          "b-f1",
+          "b-f11"
+        ],
+        "sourceRequirementEvidence": "Bank Passbook or Statement showing the applicant's own name as account holder.",
+        "confidence": 0.85,
+        "status": "verified",
+        "origin": "deterministic"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "ci-finding-1-q9bsx5",
+        "findingId": "finding-1-q9bsx5",
+        "priority": "requires_human_review",
+        "whatAppearsWrong": "Possibly missing: category_certificate (conditional)",
+        "whyItMatters": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "relevantRequirement": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "requirementSource": "req-category-certificate",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Confirm this manually before submitting.",
+        "confidence": 0.95,
+        "humanReviewStatus": "pending"
+      },
+      {
+        "id": "ci-finding-2-74vel7",
+        "findingId": "finding-2-74vel7",
+        "priority": "missing_mandatory_document",
+        "whatAppearsWrong": "Missing required document: residence_certificate",
+        "whyItMatters": "The requirements state this document is mandatory, but no document of this type was found in the packet.",
+        "relevantRequirement": "Residence Certificate confirming domicile in Nagaland.",
+        "requirementSource": "req-doc-residence",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.98,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-3-3t0168",
+        "findingId": "finding-3-3t0168",
+        "priority": "identity_or_factual_conflict",
+        "whatAppearsWrong": "Conflicting full name across documents",
+        "whyItMatters": "Different documents report different values for full name: \"Wonthong Yeptho\" (b-form) vs \"Wonthong T. Yeptho\" (b-id) vs \"Wonthong Yeptho\" (b-transcript).",
+        "relevantRequirement": null,
+        "requirementSource": null,
+        "applicantEvidence": "b-f1, b-f4, b-f6",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-4-yaa8yj",
+        "findingId": "finding-4-yaa8yj",
+        "priority": "identity_or_factual_conflict",
+        "whatAppearsWrong": "Conflicting date of birth across documents",
+        "whyItMatters": "Different documents report different values for date of birth: \"2003-07-17\" (b-form) vs \"2003-07-14\" (b-id).",
+        "relevantRequirement": null,
+        "requirementSource": null,
+        "applicantEvidence": "b-f2, b-f5",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-5-j3gbr9",
+        "findingId": "finding-5-j3gbr9",
+        "priority": "possible_disqualifying_problem",
+        "whatAppearsWrong": "gpa or marks does not meet stated rule",
+        "whyItMatters": "Requirement expects gpa_or_marks gte \"6\", but the packet shows \"5.4\" (b-transcript).",
+        "relevantRequirement": "The applicant must have obtained a minimum aggregate of 6.0 CGPA (or 60%) in the most\n    recent academic year.",
+        "requirementSource": "req-field-gpa",
+        "applicantEvidence": "b-f7",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-6-en1qa3",
+        "findingId": "finding-6-en1qa3",
+        "priority": "expired_documentation",
+        "whatAppearsWrong": "Expired document: income certificate",
+        "whyItMatters": "This document's expiry date (31/01/2026) is before the audit date (2026-03-15).",
+        "relevantRequirement": null,
+        "requirementSource": null,
+        "applicantEvidence": "b-f10",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.89,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-7-fa2xfk",
+        "findingId": "finding-7-fa2xfk",
+        "priority": "possible_disqualifying_problem",
+        "whatAppearsWrong": "Wrong financial year on income/bank document",
+        "whyItMatters": "Requirement specifies financial year 2025-26; document \"b-income\" shows 2024-25.",
+        "relevantRequirement": "The Income Certificate must be issued for financial year 2025-26.",
+        "requirementSource": "req-field-financial-year",
+        "applicantEvidence": "b-f9",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-8-9t07g6",
+        "findingId": "finding-8-9t07g6",
+        "priority": "formatting_or_file_problem",
+        "whatAppearsWrong": "Unsupported file format: voter-id.heic",
+        "whyItMatters": "File type \"image/heic\" is not in the accepted formats (application/pdf, image/jpeg, image/png).",
+        "relevantRequirement": "All documents must be submitted as PDF, JPEG, or PNG files no larger than 10 MB each.",
+        "requirementSource": "req-format-file-types",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 1,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-9-f4ut2z",
+        "findingId": "finding-9-f4ut2z",
+        "priority": "formatting_or_file_problem",
+        "whatAppearsWrong": "Missing page(s): transcript",
+        "whyItMatters": "Requirement expects 2 page(s); b-transcript has 1.",
+        "relevantRequirement": "The Academic Transcript must include both pages; a single-page transcript will not be\n    accepted.",
+        "requirementSource": "req-format-transcript-pages",
+        "applicantEvidence": "b-f8",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.99,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-10-lm160k",
+        "findingId": "finding-10-lm160k",
+        "priority": "formatting_or_file_problem",
+        "whatAppearsWrong": "Missing signature: application form",
+        "whyItMatters": "No signature was detected on this document (confidence 0.88).",
+        "relevantRequirement": "The Application Form must bear the applicant's signature.",
+        "requirementSource": "req-signature-form",
+        "applicantEvidence": "b-f3",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.88,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-11-8reyet",
+        "findingId": "finding-11-8reyet",
+        "priority": "identity_or_factual_conflict",
+        "whatAppearsWrong": "Bank account holder name does not match applicant name",
+        "whyItMatters": "The application identifies the applicant as \"Wonthong Yeptho\", but the bank document lists the account holder as \"W. Yeptho\". The notice requires the bank document to be in the applicant's own name.",
+        "relevantRequirement": "Bank Passbook or Statement showing the applicant's own name as account holder.",
+        "requirementSource": null,
+        "applicantEvidence": "b-f1, b-f11",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.85,
+        "humanReviewStatus": "not_required"
+      }
+    ],
+    "timings": [
+      {
+        "node": "node1_requirement_compiler",
+        "latencyMs": 81,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-form",
+        "latencyMs": 69,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-form",
+        "latencyMs": 84,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-id",
+        "latencyMs": 90,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-id",
+        "latencyMs": 56,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-transcript",
+        "latencyMs": 90,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-transcript",
+        "latencyMs": 75,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-income",
+        "latencyMs": 51,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-income",
+        "latencyMs": 46,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-bank",
+        "latencyMs": 53,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-bank",
+        "latencyMs": 43,
+        "isMock": true
+      }
+    ],
+    "isMock": true
+  },
+  {
+    "findings": [
+      {
+        "id": "finding-1-woxvd3",
+        "requirementId": "req-category-certificate",
+        "severity": "review",
+        "category": "required_document",
+        "title": "Possibly missing: category_certificate (conditional)",
+        "explanation": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "affectedDocuments": [],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "confidence": 0.95,
+        "status": "human_review",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-2-moknbb",
+        "requirementId": "req-doc-residence",
+        "severity": "critical",
+        "category": "required_document",
+        "title": "Missing required document: residence_certificate",
+        "explanation": "The requirements state this document is mandatory, but no document of this type was found in the packet.",
+        "affectedDocuments": [],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "Residence Certificate confirming domicile in Nagaland.",
+        "confidence": 0.98,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-3-ffz849",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "cross_document_consistency",
+        "title": "Conflicting full name across documents",
+        "explanation": "Different documents report different values for full name: \"Wonthong Yeptho\" (b-form) vs \"Wonthong T. Yeptho\" (b-id) vs \"Wonthong Yeptho\" (b-transcript).",
+        "affectedDocuments": [
+          "b-form",
+          "b-id",
+          "b-transcript"
+        ],
+        "evidenceFactIds": [
+          "b-f1",
+          "b-f4",
+          "b-f6"
+        ],
+        "sourceRequirementEvidence": null,
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-4-ls80sd",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "cross_document_consistency",
+        "title": "Conflicting date of birth across documents",
+        "explanation": "Different documents report different values for date of birth: \"2003-07-17\" (b-form) vs \"2003-07-14\" (b-id).",
+        "affectedDocuments": [
+          "b-form",
+          "b-id"
+        ],
+        "evidenceFactIds": [
+          "b-f2",
+          "b-f5"
+        ],
+        "sourceRequirementEvidence": null,
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-5-crsvfw",
+        "requirementId": "req-field-gpa",
+        "severity": "warning",
+        "category": "field_rule",
+        "title": "gpa or marks does not meet stated rule",
+        "explanation": "Requirement expects gpa_or_marks gte \"6\", but the packet shows \"5.4\" (b-transcript).",
+        "affectedDocuments": [
+          "b-transcript"
+        ],
+        "evidenceFactIds": [
+          "b-f7"
+        ],
+        "sourceRequirementEvidence": "The applicant must have obtained a minimum aggregate of 6.0 CGPA (or 60%) in the most\n    recent academic year.",
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-6-z5w58j",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "document_validity",
+        "title": "Expired document: income certificate",
+        "explanation": "This document's expiry date (31/01/2026) is before the audit date (2026-03-15).",
+        "affectedDocuments": [
+          "b-income"
+        ],
+        "evidenceFactIds": [
+          "b-f10"
+        ],
+        "sourceRequirementEvidence": null,
+        "confidence": 0.89,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-7-udgdfd",
+        "requirementId": "req-field-financial-year",
+        "severity": "critical",
+        "category": "field_rule",
+        "title": "Wrong financial year on income/bank document",
+        "explanation": "Requirement specifies financial year 2025-26; document \"b-income\" shows 2024-25.",
+        "affectedDocuments": [
+          "b-income"
+        ],
+        "evidenceFactIds": [
+          "b-f9"
+        ],
+        "sourceRequirementEvidence": "The Income Certificate must be issued for financial year 2025-26.",
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-8-m0usoe",
+        "requirementId": "req-format-file-types",
+        "severity": "critical",
+        "category": "format",
+        "title": "Unsupported file format: voter-id.heic",
+        "explanation": "File type \"image/heic\" is not in the accepted formats (application/pdf, image/jpeg, image/png).",
+        "affectedDocuments": [
+          "b-id"
+        ],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "All documents must be submitted as PDF, JPEG, or PNG files no larger than 10 MB each.",
+        "confidence": 1,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-9-zkdmb4",
+        "requirementId": "req-format-transcript-pages",
+        "severity": "critical",
+        "category": "format",
+        "title": "Missing page(s): transcript",
+        "explanation": "Requirement expects 2 page(s); b-transcript has 1.",
+        "affectedDocuments": [
+          "b-transcript"
+        ],
+        "evidenceFactIds": [
+          "b-f8"
+        ],
+        "sourceRequirementEvidence": "The Academic Transcript must include both pages; a single-page transcript will not be\n    accepted.",
+        "confidence": 0.99,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-10-vej2od",
+        "requirementId": "req-signature-form",
+        "severity": "critical",
+        "category": "signature",
+        "title": "Missing signature: application form",
+        "explanation": "No signature was detected on this document (confidence 0.88).",
+        "affectedDocuments": [
+          "b-form"
+        ],
+        "evidenceFactIds": [
+          "b-f3"
+        ],
+        "sourceRequirementEvidence": "The Application Form must bear the applicant's signature.",
+        "confidence": 0.88,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-11-xt5b3r",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "cross_document_consistency",
+        "title": "Bank account holder name does not match applicant name",
+        "explanation": "The application identifies the applicant as \"Wonthong Yeptho\", but the bank document lists the account holder as \"W. Yeptho\". The notice requires the bank document to be in the applicant's own name.",
+        "affectedDocuments": [
+          "b-bank"
+        ],
+        "evidenceFactIds": [
+          "b-f1",
+          "b-f11"
+        ],
+        "sourceRequirementEvidence": "Bank Passbook or Statement showing the applicant's own name as account holder.",
+        "confidence": 0.85,
+        "status": "verified",
+        "origin": "deterministic"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "ci-finding-1-woxvd3",
+        "findingId": "finding-1-woxvd3",
+        "priority": "requires_human_review",
+        "whatAppearsWrong": "Possibly missing: category_certificate (conditional)",
+        "whyItMatters": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "relevantRequirement": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "requirementSource": "req-category-certificate",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Confirm this manually before submitting.",
+        "confidence": 0.95,
+        "humanReviewStatus": "pending"
+      },
+      {
+        "id": "ci-finding-2-moknbb",
+        "findingId": "finding-2-moknbb",
+        "priority": "missing_mandatory_document",
+        "whatAppearsWrong": "Missing required document: residence_certificate",
+        "whyItMatters": "The requirements state this document is mandatory, but no document of this type was found in the packet.",
+        "relevantRequirement": "Residence Certificate confirming domicile in Nagaland.",
+        "requirementSource": "req-doc-residence",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.98,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-3-ffz849",
+        "findingId": "finding-3-ffz849",
+        "priority": "identity_or_factual_conflict",
+        "whatAppearsWrong": "Conflicting full name across documents",
+        "whyItMatters": "Different documents report different values for full name: \"Wonthong Yeptho\" (b-form) vs \"Wonthong T. Yeptho\" (b-id) vs \"Wonthong Yeptho\" (b-transcript).",
+        "relevantRequirement": null,
+        "requirementSource": null,
+        "applicantEvidence": "b-f1, b-f4, b-f6",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-4-ls80sd",
+        "findingId": "finding-4-ls80sd",
+        "priority": "identity_or_factual_conflict",
+        "whatAppearsWrong": "Conflicting date of birth across documents",
+        "whyItMatters": "Different documents report different values for date of birth: \"2003-07-17\" (b-form) vs \"2003-07-14\" (b-id).",
+        "relevantRequirement": null,
+        "requirementSource": null,
+        "applicantEvidence": "b-f2, b-f5",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-5-crsvfw",
+        "findingId": "finding-5-crsvfw",
+        "priority": "possible_disqualifying_problem",
+        "whatAppearsWrong": "gpa or marks does not meet stated rule",
+        "whyItMatters": "Requirement expects gpa_or_marks gte \"6\", but the packet shows \"5.4\" (b-transcript).",
+        "relevantRequirement": "The applicant must have obtained a minimum aggregate of 6.0 CGPA (or 60%) in the most\n    recent academic year.",
+        "requirementSource": "req-field-gpa",
+        "applicantEvidence": "b-f7",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-6-z5w58j",
+        "findingId": "finding-6-z5w58j",
+        "priority": "expired_documentation",
+        "whatAppearsWrong": "Expired document: income certificate",
+        "whyItMatters": "This document's expiry date (31/01/2026) is before the audit date (2026-03-15).",
+        "relevantRequirement": null,
+        "requirementSource": null,
+        "applicantEvidence": "b-f10",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.89,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-7-udgdfd",
+        "findingId": "finding-7-udgdfd",
+        "priority": "possible_disqualifying_problem",
+        "whatAppearsWrong": "Wrong financial year on income/bank document",
+        "whyItMatters": "Requirement specifies financial year 2025-26; document \"b-income\" shows 2024-25.",
+        "relevantRequirement": "The Income Certificate must be issued for financial year 2025-26.",
+        "requirementSource": "req-field-financial-year",
+        "applicantEvidence": "b-f9",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-8-m0usoe",
+        "findingId": "finding-8-m0usoe",
+        "priority": "formatting_or_file_problem",
+        "whatAppearsWrong": "Unsupported file format: voter-id.heic",
+        "whyItMatters": "File type \"image/heic\" is not in the accepted formats (application/pdf, image/jpeg, image/png).",
+        "relevantRequirement": "All documents must be submitted as PDF, JPEG, or PNG files no larger than 10 MB each.",
+        "requirementSource": "req-format-file-types",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 1,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-9-zkdmb4",
+        "findingId": "finding-9-zkdmb4",
+        "priority": "formatting_or_file_problem",
+        "whatAppearsWrong": "Missing page(s): transcript",
+        "whyItMatters": "Requirement expects 2 page(s); b-transcript has 1.",
+        "relevantRequirement": "The Academic Transcript must include both pages; a single-page transcript will not be\n    accepted.",
+        "requirementSource": "req-format-transcript-pages",
+        "applicantEvidence": "b-f8",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.99,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-10-vej2od",
+        "findingId": "finding-10-vej2od",
+        "priority": "formatting_or_file_problem",
+        "whatAppearsWrong": "Missing signature: application form",
+        "whyItMatters": "No signature was detected on this document (confidence 0.88).",
+        "relevantRequirement": "The Application Form must bear the applicant's signature.",
+        "requirementSource": "req-signature-form",
+        "applicantEvidence": "b-f3",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.88,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-11-xt5b3r",
+        "findingId": "finding-11-xt5b3r",
+        "priority": "identity_or_factual_conflict",
+        "whatAppearsWrong": "Bank account holder name does not match applicant name",
+        "whyItMatters": "The application identifies the applicant as \"Wonthong Yeptho\", but the bank document lists the account holder as \"W. Yeptho\". The notice requires the bank document to be in the applicant's own name.",
+        "relevantRequirement": "Bank Passbook or Statement showing the applicant's own name as account holder.",
+        "requirementSource": null,
+        "applicantEvidence": "b-f1, b-f11",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.85,
+        "humanReviewStatus": "not_required"
+      }
+    ],
+    "timings": [
+      {
+        "node": "node1_requirement_compiler",
+        "latencyMs": 90,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-form",
+        "latencyMs": 96,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-form",
+        "latencyMs": 77,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-id",
+        "latencyMs": 66,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-id",
+        "latencyMs": 91,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-transcript",
+        "latencyMs": 75,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-transcript",
+        "latencyMs": 51,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-income",
+        "latencyMs": 47,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-income",
+        "latencyMs": 95,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-bank",
+        "latencyMs": 92,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-bank",
+        "latencyMs": 89,
+        "isMock": true
+      }
+    ],
+    "isMock": true
+  },
+  {
+    "findings": [
+      {
+        "id": "finding-1-33ercc",
+        "requirementId": "req-category-certificate",
+        "severity": "review",
+        "category": "required_document",
+        "title": "Possibly missing: category_certificate (conditional)",
+        "explanation": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "affectedDocuments": [],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "confidence": 0.95,
+        "status": "human_review",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-2-glohnp",
+        "requirementId": "req-doc-residence",
+        "severity": "critical",
+        "category": "required_document",
+        "title": "Missing required document: residence_certificate",
+        "explanation": "The requirements state this document is mandatory, but no document of this type was found in the packet.",
+        "affectedDocuments": [],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "Residence Certificate confirming domicile in Nagaland.",
+        "confidence": 0.98,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-3-6nr7x4",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "cross_document_consistency",
+        "title": "Conflicting full name across documents",
+        "explanation": "Different documents report different values for full name: \"Wonthong Yeptho\" (b-form) vs \"Wonthong T. Yeptho\" (b-id) vs \"Wonthong Yeptho\" (b-transcript).",
+        "affectedDocuments": [
+          "b-form",
+          "b-id",
+          "b-transcript"
+        ],
+        "evidenceFactIds": [
+          "b-f1",
+          "b-f4",
+          "b-f6"
+        ],
+        "sourceRequirementEvidence": null,
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-4-gnazgh",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "cross_document_consistency",
+        "title": "Conflicting date of birth across documents",
+        "explanation": "Different documents report different values for date of birth: \"2003-07-17\" (b-form) vs \"2003-07-14\" (b-id).",
+        "affectedDocuments": [
+          "b-form",
+          "b-id"
+        ],
+        "evidenceFactIds": [
+          "b-f2",
+          "b-f5"
+        ],
+        "sourceRequirementEvidence": null,
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-5-twzgrq",
+        "requirementId": "req-field-gpa",
+        "severity": "warning",
+        "category": "field_rule",
+        "title": "gpa or marks does not meet stated rule",
+        "explanation": "Requirement expects gpa_or_marks gte \"6\", but the packet shows \"5.4\" (b-transcript).",
+        "affectedDocuments": [
+          "b-transcript"
+        ],
+        "evidenceFactIds": [
+          "b-f7"
+        ],
+        "sourceRequirementEvidence": "The applicant must have obtained a minimum aggregate of 6.0 CGPA (or 60%) in the most\n    recent academic year.",
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-6-yl3mgt",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "document_validity",
+        "title": "Expired document: income certificate",
+        "explanation": "This document's expiry date (31/01/2026) is before the audit date (2026-03-15).",
+        "affectedDocuments": [
+          "b-income"
+        ],
+        "evidenceFactIds": [
+          "b-f10"
+        ],
+        "sourceRequirementEvidence": null,
+        "confidence": 0.89,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-7-mnlfvn",
+        "requirementId": "req-field-financial-year",
+        "severity": "critical",
+        "category": "field_rule",
+        "title": "Wrong financial year on income/bank document",
+        "explanation": "Requirement specifies financial year 2025-26; document \"b-income\" shows 2024-25.",
+        "affectedDocuments": [
+          "b-income"
+        ],
+        "evidenceFactIds": [
+          "b-f9"
+        ],
+        "sourceRequirementEvidence": "The Income Certificate must be issued for financial year 2025-26.",
+        "confidence": 0.9,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-8-x5ti6t",
+        "requirementId": "req-format-file-types",
+        "severity": "critical",
+        "category": "format",
+        "title": "Unsupported file format: voter-id.heic",
+        "explanation": "File type \"image/heic\" is not in the accepted formats (application/pdf, image/jpeg, image/png).",
+        "affectedDocuments": [
+          "b-id"
+        ],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "All documents must be submitted as PDF, JPEG, or PNG files no larger than 10 MB each.",
+        "confidence": 1,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-9-lvxrij",
+        "requirementId": "req-format-transcript-pages",
+        "severity": "critical",
+        "category": "format",
+        "title": "Missing page(s): transcript",
+        "explanation": "Requirement expects 2 page(s); b-transcript has 1.",
+        "affectedDocuments": [
+          "b-transcript"
+        ],
+        "evidenceFactIds": [
+          "b-f8"
+        ],
+        "sourceRequirementEvidence": "The Academic Transcript must include both pages; a single-page transcript will not be\n    accepted.",
+        "confidence": 0.99,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-10-spg6ki",
+        "requirementId": "req-signature-form",
+        "severity": "critical",
+        "category": "signature",
+        "title": "Missing signature: application form",
+        "explanation": "No signature was detected on this document (confidence 0.88).",
+        "affectedDocuments": [
+          "b-form"
+        ],
+        "evidenceFactIds": [
+          "b-f3"
+        ],
+        "sourceRequirementEvidence": "The Application Form must bear the applicant's signature.",
+        "confidence": 0.88,
+        "status": "verified",
+        "origin": "deterministic"
+      },
+      {
+        "id": "finding-11-yhkt6d",
+        "requirementId": null,
+        "severity": "critical",
+        "category": "cross_document_consistency",
+        "title": "Bank account holder name does not match applicant name",
+        "explanation": "The application identifies the applicant as \"Wonthong Yeptho\", but the bank document lists the account holder as \"W. Yeptho\". The notice requires the bank document to be in the applicant's own name.",
+        "affectedDocuments": [
+          "b-bank"
+        ],
+        "evidenceFactIds": [
+          "b-f1",
+          "b-f11"
+        ],
+        "sourceRequirementEvidence": "Bank Passbook or Statement showing the applicant's own name as account holder.",
+        "confidence": 0.85,
+        "status": "verified",
+        "origin": "deterministic"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "ci-finding-1-33ercc",
+        "findingId": "finding-1-33ercc",
+        "priority": "requires_human_review",
+        "whatAppearsWrong": "Possibly missing: category_certificate (conditional)",
+        "whyItMatters": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "relevantRequirement": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "requirementSource": "req-category-certificate",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Confirm this manually before submitting.",
+        "confidence": 0.95,
+        "humanReviewStatus": "pending"
+      },
+      {
+        "id": "ci-finding-2-glohnp",
+        "findingId": "finding-2-glohnp",
+        "priority": "missing_mandatory_document",
+        "whatAppearsWrong": "Missing required document: residence_certificate",
+        "whyItMatters": "The requirements state this document is mandatory, but no document of this type was found in the packet.",
+        "relevantRequirement": "Residence Certificate confirming domicile in Nagaland.",
+        "requirementSource": "req-doc-residence",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.98,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-3-6nr7x4",
+        "findingId": "finding-3-6nr7x4",
+        "priority": "identity_or_factual_conflict",
+        "whatAppearsWrong": "Conflicting full name across documents",
+        "whyItMatters": "Different documents report different values for full name: \"Wonthong Yeptho\" (b-form) vs \"Wonthong T. Yeptho\" (b-id) vs \"Wonthong Yeptho\" (b-transcript).",
+        "relevantRequirement": null,
+        "requirementSource": null,
+        "applicantEvidence": "b-f1, b-f4, b-f6",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-4-gnazgh",
+        "findingId": "finding-4-gnazgh",
+        "priority": "identity_or_factual_conflict",
+        "whatAppearsWrong": "Conflicting date of birth across documents",
+        "whyItMatters": "Different documents report different values for date of birth: \"2003-07-17\" (b-form) vs \"2003-07-14\" (b-id).",
+        "relevantRequirement": null,
+        "requirementSource": null,
+        "applicantEvidence": "b-f2, b-f5",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-5-twzgrq",
+        "findingId": "finding-5-twzgrq",
+        "priority": "possible_disqualifying_problem",
+        "whatAppearsWrong": "gpa or marks does not meet stated rule",
+        "whyItMatters": "Requirement expects gpa_or_marks gte \"6\", but the packet shows \"5.4\" (b-transcript).",
+        "relevantRequirement": "The applicant must have obtained a minimum aggregate of 6.0 CGPA (or 60%) in the most\n    recent academic year.",
+        "requirementSource": "req-field-gpa",
+        "applicantEvidence": "b-f7",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-6-yl3mgt",
+        "findingId": "finding-6-yl3mgt",
+        "priority": "expired_documentation",
+        "whatAppearsWrong": "Expired document: income certificate",
+        "whyItMatters": "This document's expiry date (31/01/2026) is before the audit date (2026-03-15).",
+        "relevantRequirement": null,
+        "requirementSource": null,
+        "applicantEvidence": "b-f10",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.89,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-7-mnlfvn",
+        "findingId": "finding-7-mnlfvn",
+        "priority": "possible_disqualifying_problem",
+        "whatAppearsWrong": "Wrong financial year on income/bank document",
+        "whyItMatters": "Requirement specifies financial year 2025-26; document \"b-income\" shows 2024-25.",
+        "relevantRequirement": "The Income Certificate must be issued for financial year 2025-26.",
+        "requirementSource": "req-field-financial-year",
+        "applicantEvidence": "b-f9",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.9,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-8-x5ti6t",
+        "findingId": "finding-8-x5ti6t",
+        "priority": "formatting_or_file_problem",
+        "whatAppearsWrong": "Unsupported file format: voter-id.heic",
+        "whyItMatters": "File type \"image/heic\" is not in the accepted formats (application/pdf, image/jpeg, image/png).",
+        "relevantRequirement": "All documents must be submitted as PDF, JPEG, or PNG files no larger than 10 MB each.",
+        "requirementSource": "req-format-file-types",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 1,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-9-lvxrij",
+        "findingId": "finding-9-lvxrij",
+        "priority": "formatting_or_file_problem",
+        "whatAppearsWrong": "Missing page(s): transcript",
+        "whyItMatters": "Requirement expects 2 page(s); b-transcript has 1.",
+        "relevantRequirement": "The Academic Transcript must include both pages; a single-page transcript will not be\n    accepted.",
+        "requirementSource": "req-format-transcript-pages",
+        "applicantEvidence": "b-f8",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.99,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-10-spg6ki",
+        "findingId": "finding-10-spg6ki",
+        "priority": "formatting_or_file_problem",
+        "whatAppearsWrong": "Missing signature: application form",
+        "whyItMatters": "No signature was detected on this document (confidence 0.88).",
+        "relevantRequirement": "The Application Form must bear the applicant's signature.",
+        "requirementSource": "req-signature-form",
+        "applicantEvidence": "b-f3",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.88,
+        "humanReviewStatus": "not_required"
+      },
+      {
+        "id": "ci-finding-11-yhkt6d",
+        "findingId": "finding-11-yhkt6d",
+        "priority": "identity_or_factual_conflict",
+        "whatAppearsWrong": "Bank account holder name does not match applicant name",
+        "whyItMatters": "The application identifies the applicant as \"Wonthong Yeptho\", but the bank document lists the account holder as \"W. Yeptho\". The notice requires the bank document to be in the applicant's own name.",
+        "relevantRequirement": "Bank Passbook or Statement showing the applicant's own name as account holder.",
+        "requirementSource": null,
+        "applicantEvidence": "b-f1, b-f11",
+        "recommendedNextAction": "Resolve with the issuing office or correct the document before submitting.",
+        "confidence": 0.85,
+        "humanReviewStatus": "not_required"
+      }
+    ],
+    "timings": [
+      {
+        "node": "node1_requirement_compiler",
+        "latencyMs": 43,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-form",
+        "latencyMs": 51,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-form",
+        "latencyMs": 71,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-id",
+        "latencyMs": 55,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-id",
+        "latencyMs": 62,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-transcript",
+        "latencyMs": 59,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-transcript",
+        "latencyMs": 77,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-income",
+        "latencyMs": 70,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-income",
+        "latencyMs": 45,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:b-bank",
+        "latencyMs": 43,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:b-bank",
+        "latencyMs": 68,
+        "isMock": true
+      }
+    ],
+    "isMock": true
+  }
+]

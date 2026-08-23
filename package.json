@@ -1,0 +1,42 @@
+{
+  "name": "clearpacket",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Catch the mistake before the application does. A verified, evidence-cited AI workflow that audits scholarship application packets before submission.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "eval:baseline": "tsx eval/runner.ts --approach=baseline",
+    "eval:clearpacket": "tsx eval/runner.ts --approach=clearpacket",
+    "eval:all": "tsx eval/runner.ts --approach=all",
+    "diagram:render": "mmdc -i diagrams/workflow.mmd -o diagrams/workflow.svg -b transparent && mmdc -i diagrams/workflow.mmd -o diagrams/workflow.png -b white -w 2400"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.45.4",
+    "next": "^16.1.5",
+    "pdf-parse": "^1.1.1",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/pdf-parse": "^1.1.4",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.14.0",
+    "eslint-config-next": "^16.1.5",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  }
+}

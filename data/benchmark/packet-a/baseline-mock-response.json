@@ -1,0 +1,4 @@
+{
+  "_disclaimer": "MOCK — hand-authored fixture for pipeline demonstration only. NOT a real Gemini API response. Run `npm run eval:baseline` with a real GEMINI_API_KEY for actual numbers.",
+  "findings": []
+}

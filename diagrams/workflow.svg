@@ -1,0 +1,148 @@
+<svg viewBox="0 0 1360 1720" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="1360" height="1720" fill="#ffffff"/>
+  <text x="680" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a2b3c">ClearPacket — 9-Node Workflow vs. Single-Prompt Baseline</text>
+
+  <!-- Inputs -->
+  <g>
+    <rect x="40" y="60" width="300" height="70" rx="8" fill="#f7e9e9" stroke="#b34747"/>
+    <text x="190" y="88" text-anchor="middle" font-size="13" fill="#1a2b3c">Official scholarship notice /</text>
+    <text x="190" y="105" text-anchor="middle" font-size="13" fill="#1a2b3c">application guide / blank form</text>
+
+    <rect x="360" y="60" width="300" height="70" rx="8" fill="#f7e9e9" stroke="#b34747"/>
+    <text x="510" y="88" text-anchor="middle" font-size="13" fill="#1a2b3c">Application form +</text>
+    <text x="510" y="105" text-anchor="middle" font-size="13" fill="#1a2b3c">identity/transcript/income/etc.</text>
+
+    <rect x="680" y="60" width="300" height="70" rx="8" fill="#f7e9e9" stroke="#b34747"/>
+    <text x="830" y="95" text-anchor="middle" font-size="13" fill="#1a2b3c">Student (human)</text>
+  </g>
+
+  <!-- Node 1 -->
+  <rect x="40" y="170" width="620" height="70" rx="8" fill="#eef4fb" stroke="#4a6fa5"/>
+  <text x="350" y="198" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a2b3c">Node 1 — Requirement Compiler</text>
+  <text x="350" y="217" text-anchor="middle" font-size="12" fill="#1a2b3c">Gemini 2.5 Flash · extracts requirements manifest with exact source citations</text>
+
+  <!-- Node 2 -->
+  <rect x="40" y="270" width="300" height="70" rx="8" fill="#eef4fb" stroke="#4a6fa5"/>
+  <text x="190" y="298" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a2b3c">Node 2 — Document Router</text>
+  <text x="190" y="317" text-anchor="middle" font-size="12" fill="#1a2b3c">Gemini 2.5 Flash · classifies each doc</text>
+
+  <!-- Node 3 -->
+  <rect x="360" y="270" width="300" height="70" rx="8" fill="#eef4fb" stroke="#4a6fa5"/>
+  <text x="510" y="298" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a2b3c">Node 3 — Evidence Extractor</text>
+  <text x="510" y="317" text-anchor="middle" font-size="12" fill="#1a2b3c">Gemini 2.5 Flash · per-doc facts, null if unreadable</text>
+
+  <!-- Deterministic layer -->
+  <rect x="40" y="380" width="620" height="150" rx="10" fill="#fdf3e3" stroke="#b8860b" stroke-width="2"/>
+  <text x="350" y="402" text-anchor="middle" font-size="13" font-weight="bold" fill="#7a5c00">Deterministic layer — plain TypeScript, no LLM</text>
+
+  <rect x="60" y="415" width="270" height="95" rx="8" fill="#fffaf0" stroke="#b8860b"/>
+  <text x="195" y="440" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a2b3c">Node 4</text>
+  <text x="195" y="458" text-anchor="middle" font-size="12" fill="#1a2b3c">Canonical Fact Builder</text>
+  <text x="195" y="476" text-anchor="middle" font-size="11" fill="#333">groups facts; flags harmless</text>
+  <text x="195" y="491" text-anchor="middle" font-size="11" fill="#333">vs. real cross-doc conflicts</text>
+
+  <rect x="350" y="415" width="290" height="95" rx="8" fill="#fffaf0" stroke="#b8860b"/>
+  <text x="495" y="440" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a2b3c">Node 5 — Rule Engine</text>
+  <text x="495" y="458" text-anchor="middle" font-size="11" fill="#333">required docs · expiry · deadlines</text>
+  <text x="495" y="474" text-anchor="middle" font-size="11" fill="#333">formats · page counts · signatures</text>
+  <text x="495" y="490" text-anchor="middle" font-size="11" fill="#333">financial year · evidence coverage</text>
+
+  <!-- Node 6 -->
+  <rect x="40" y="570" width="620" height="70" rx="8" fill="#eef4fb" stroke="#4a6fa5"/>
+  <text x="350" y="598" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a2b3c">Node 6 — Adversarial Auditor</text>
+  <text x="350" y="617" text-anchor="middle" font-size="12" fill="#1a2b3c">Gemini 2.5 Flash · probes for missed, requirement-linked defects only</text>
+
+  <!-- Node 7 -->
+  <rect x="40" y="670" width="620" height="100" rx="8" fill="#eef4fb" stroke="#4a6fa5"/>
+  <text x="350" y="696" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a2b3c">Node 7 — Independent Evidence Verifier</text>
+  <text x="350" y="716" text-anchor="middle" font-size="11" fill="#1a2b3c">7 checks per candidate: requirement exists? mandatory or recommended?</text>
+  <text x="350" y="732" text-anchor="middle" font-size="11" fill="#1a2b3c">evidence exists? real after normalization? OCR-plausible? supported? decision</text>
+  <text x="350" y="748" text-anchor="middle" font-size="11" font-style="italic" fill="#555">→ verified / rejected / escalate_to_student</text>
+
+  <!-- Safety net -->
+  <rect x="40" y="800" width="620" height="80" rx="8" fill="#fdf3e3" stroke="#b8860b" stroke-width="2"/>
+  <text x="350" y="826" text-anchor="middle" font-size="13" font-weight="bold" fill="#7a5c00">Deterministic safety net (TypeScript)</text>
+  <text x="350" y="846" text-anchor="middle" font-size="11" fill="#333">Force-rejects any finding with no evidence citation —</text>
+  <text x="350" y="862" text-anchor="middle" font-size="11" fill="#333">independent of what Node 7 concluded</text>
+
+  <!-- Node 8 -->
+  <rect x="40" y="910" width="300" height="90" rx="8" fill="#eef4fb" stroke="#4a6fa5"/>
+  <text x="190" y="936" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a2b3c">Node 8 — Confirmation Gate</text>
+  <text x="190" y="955" text-anchor="middle" font-size="11" fill="#1a2b3c">Gemini 2.5 Flash · asks only</text>
+  <text x="190" y="971" text-anchor="middle" font-size="11" fill="#1a2b3c">materially-relevant questions</text>
+
+  <!-- Student loop -->
+  <rect x="680" y="910" width="300" height="90" rx="45" fill="#f7e9e9" stroke="#b34747"/>
+  <text x="830" y="945" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a2b3c">Student</text>
+  <text x="830" y="965" text-anchor="middle" font-size="11" fill="#1a2b3c">answers recorded separately</text>
+  <text x="830" y="980" text-anchor="middle" font-size="11" fill="#1a2b3c">from extracted source facts</text>
+
+  <!-- Node 9 -->
+  <rect x="360" y="1040" width="300" height="80" rx="8" fill="#eef4fb" stroke="#4a6fa5"/>
+  <text x="510" y="1066" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a2b3c">Node 9 — Correction Planner</text>
+  <text x="510" y="1085" text-anchor="middle" font-size="11" fill="#1a2b3c">Gemini 2.5 Flash · prioritized, evidence-cited checklist</text>
+
+  <!-- Output -->
+  <rect x="360" y="1160" width="300" height="70" rx="8" fill="#eafbea" stroke="#3a7d3a"/>
+  <text x="510" y="1188" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a2b3c">Verified correction checklist</text>
+  <text x="510" y="1206" text-anchor="middle" font-size="11" fill="#1a2b3c">+ full workflow trace</text>
+
+  <!-- Baseline -->
+  <rect x="800" y="380" width="480" height="80" rx="8" fill="#f2f2f2" stroke="#888"/>
+  <text x="1040" y="406" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a2b3c">Baseline — single mega-prompt</text>
+  <text x="1040" y="425" text-anchor="middle" font-size="11" fill="#333">Same Gemini 2.5 Flash model, same documents,</text>
+  <text x="1040" y="441" text-anchor="middle" font-size="11" fill="#333">one instruction, no structure, no verification</text>
+
+  <!-- Benchmark lab -->
+  <rect x="740" y="1160" width="580" height="150" rx="10" fill="#eafbea" stroke="#3a7d3a" stroke-width="2"/>
+  <text x="1030" y="1186" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a2b3c">/benchmark — ClearPacket vs. Baseline</text>
+  <text x="1030" y="1210" text-anchor="middle" font-size="11" fill="#333">Precision · Recall · F1 · Evidence coverage</text>
+  <text x="1030" y="1228" text-anchor="middle" font-size="11" fill="#333">Hallucination rate · Repeatability (3 runs)</text>
+  <text x="1030" y="1246" text-anchor="middle" font-size="11" fill="#333">Prompt-injection resistance · Latency · Token usage</text>
+  <text x="1030" y="1268" text-anchor="middle" font-size="11" font-style="italic" fill="#555">scored against machine-readable ground truth</text>
+  <text x="1030" y="1284" text-anchor="middle" font-size="11" font-style="italic" fill="#555">for 3 synthetic packets (clean / defects / adversarial)</text>
+
+  <!-- Legend -->
+  <g transform="translate(40,1360)">
+    <rect x="0" y="0" width="1280" height="120" rx="8" fill="#ffffff" stroke="#ccc"/>
+    <text x="20" y="24" font-size="13" font-weight="bold" fill="#1a2b3c">Legend</text>
+    <rect x="20" y="36" width="24" height="16" fill="#eef4fb" stroke="#4a6fa5"/>
+    <text x="52" y="49" font-size="12" fill="#1a2b3c">LLM node (Gemini 2.5 Flash)</text>
+    <rect x="320" y="36" width="24" height="16" fill="#fdf3e3" stroke="#b8860b"/>
+    <text x="352" y="49" font-size="12" fill="#1a2b3c">Deterministic TypeScript (no LLM)</text>
+    <rect x="680" y="36" width="24" height="16" fill="#f7e9e9" stroke="#b34747"/>
+    <text x="712" y="49" font-size="12" fill="#1a2b3c">Human input / loop</text>
+    <rect x="920" y="36" width="24" height="16" fill="#eafbea" stroke="#3a7d3a"/>
+    <text x="952" y="49" font-size="12" fill="#1a2b3c">Final output</text>
+    <text x="20" y="80" font-size="11" fill="#555">Full node-by-node prompt text: docs/prompts.md. Full architecture rationale: docs/workflow.md.</text>
+    <text x="20" y="98" font-size="11" fill="#555">Evaluation methodology and current (mock) benchmark numbers: docs/evaluation.md.</text>
+  </g>
+
+  <!-- Arrows -->
+  <path d="M190,130 L190,168" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M510,130 L400,168" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M510,130 L510,268" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M190,240 L190,268" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M340,305 L358,305" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M350,240 L495,413" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M195,340 L195,413" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M510,340 L495,413" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M350,530 L350,568" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M350,640 L350,668" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M350,530 L350,668" stroke="#555" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)" transform="translate(-60,0)"/>
+  <path d="M350,770 L350,798" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M280,880 L190,908" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M340,955 L678,955" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M680,970 L400,1005" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4 3"/>
+  <path d="M420,880 L480,1038" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M510,1000 L510,1038" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M510,1120 L510,1158" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M660,1195 L1028,1195" stroke="#3a7d3a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M980,95 L1040,378" stroke="#888" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+  <path d="M1040,460 L1040,1158" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+</svg>

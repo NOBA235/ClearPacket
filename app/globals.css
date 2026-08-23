@@ -1,0 +1,211 @@
+:root {
+  --color-bg: #faf9f5;
+  --color-bg-raised: #ffffff;
+  --color-bg-sunken: #f2efe6;
+  --color-text: #23211d;
+  --color-text-muted: #6b675f;
+  --color-border: #e4e1d8;
+
+  --color-primary: #3e5e8c;
+  --color-primary-soft: #e7eef6;
+  --color-primary-dark: #2c4569;
+
+  --color-amber: #8a5f11;
+  --color-amber-soft: #fbf1dc;
+  --color-amber-border: #e0b558;
+
+  --color-red: #a23b3b;
+  --color-red-soft: #f7e7e7;
+  --color-red-border: #d99a9a;
+
+  --color-green: #3a6b3a;
+  --color-green-soft: #e8f2e8;
+  --color-green-border: #a3c9a3;
+
+  --font-display: "IBM Plex Serif", Georgia, serif;
+  --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-card: 0 1px 2px rgba(35, 33, 29, 0.06), 0 1px 1px rgba(35, 33, 29, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5em 0;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+button {
+  font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+/* --- The signature element: an evidence citation strip. Used anywhere a finding cites its
+   exact source — the hero, results, and the benchmark lab all reuse this. --- */
+.citation {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  background: var(--color-bg-sunken);
+  border-left: 3px solid var(--color-border);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 10px 14px;
+  color: var(--color-text);
+}
+
+.citation-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.severity-critical {
+  border-left-color: var(--color-red-border);
+}
+.severity-critical .citation-label {
+  color: var(--color-red);
+}
+.severity-warning {
+  border-left-color: var(--color-amber-border);
+}
+.severity-warning .citation-label {
+  color: var(--color-amber);
+}
+.severity-review {
+  border-left-color: var(--color-primary);
+}
+.severity-review .citation-label {
+  color: var(--color-primary);
+}
+.severity-passed {
+  border-left-color: var(--color-green-border);
+}
+.severity-passed .citation-label {
+  color: var(--color-green);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.01em;
+}
+.badge-critical {
+  background: var(--color-red-soft);
+  color: var(--color-red);
+}
+.badge-warning {
+  background: var(--color-amber-soft);
+  color: var(--color-amber);
+}
+.badge-review {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+}
+.badge-passed {
+  background: var(--color-green-soft);
+  color: var(--color-green);
+}
+.badge-mock {
+  background: var(--color-amber-soft);
+  color: var(--color-amber);
+  border: 1px solid var(--color-amber-border);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 11px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+.btn-secondary {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+}

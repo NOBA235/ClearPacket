@@ -1,0 +1,47 @@
+{
+  "_disclaimer": "MOCK — hand-authored fixture for pipeline demonstration only. NOT a real Gemini API response. Run `npm run eval:baseline` with a real GEMINI_API_KEY for actual numbers.",
+  "findings": [
+    {
+      "title": "Residence Certificate not submitted",
+      "explanation": "The application packet does not include a Residence Certificate, which the notice lists as a required document.",
+      "severity": "critical",
+      "evidenceQuote": "Residence Certificate confirming domicile in Nagaland."
+    },
+    {
+      "title": "Application form appears unsigned",
+      "explanation": "No signature was found on the application form.",
+      "severity": "critical",
+      "evidenceQuote": null
+    },
+    {
+      "title": "Income certificate is expired",
+      "explanation": "The income certificate's validity date has already passed as of the review date.",
+      "severity": "critical",
+      "evidenceQuote": "Valid until 31/01/2026"
+    },
+    {
+      "title": "Identity document file format not accepted",
+      "explanation": "The identity document was uploaded as a HEIC image, which is not one of the accepted formats.",
+      "severity": "warning",
+      "evidenceQuote": null
+    },
+    {
+      "title": "Applicant full name does not match between application form and identity document",
+      "explanation": "The application form lists the applicant's name differently than the identity document.",
+      "severity": "warning",
+      "evidenceQuote": null
+    },
+    {
+      "title": "Transcript appears to be missing pages",
+      "explanation": "Only one page of the transcript was found; transcripts for this program are normally issued as multiple pages.",
+      "severity": "review",
+      "evidenceQuote": null
+    },
+    {
+      "title": "Institution accreditation could not be confirmed",
+      "explanation": "The reviewer could not independently confirm that the issuing institution is currently accredited; applicants should double check this with the registrar.",
+      "severity": "review",
+      "evidenceQuote": null
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "findings": [],
+    "latencyMs": 82,
+    "isMock": true,
+    "usage": {
+      "inputTokens": 741,
+      "outputTokens": 50
+    }
+  },
+  {
+    "findings": [],
+    "latencyMs": 60,
+    "isMock": true,
+    "usage": {
+      "inputTokens": 741,
+      "outputTokens": 50
+    }
+  },
+  {
+    "findings": [],
+    "latencyMs": 56,
+    "isMock": true,
+    "usage": {
+      "inputTokens": 741,
+      "outputTokens": 50
+    }
+  }
+]

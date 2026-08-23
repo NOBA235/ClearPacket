@@ -1,0 +1,81 @@
+flowchart TD
+    subgraph INPUTS["Human inputs"]
+        I1[Official scholarship notice /<br/>application guide / blank form]
+        I2[Application form]
+        I3[Identity, transcript, income,<br/>residence, category, bank documents]
+    end
+
+    subgraph N1G["Node 1 — Requirement Compiler (Gemini 2.5 Flash)"]
+        N1[Extract requirements manifest<br/>with exact source citations]
+    end
+
+    subgraph N2G["Node 2 — Document Router (Gemini 2.5 Flash)"]
+        N2[Classify each document,<br/>flag low-confidence for review]
+    end
+
+    subgraph N3G["Node 3 — Evidence Extractor (Gemini 2.5 Flash)"]
+        N3[Extract per-document facts,<br/>null for unreadable/missing]
+    end
+
+    subgraph DET["Deterministic layer — plain TypeScript, no LLM"]
+        N4[Node 4 — Canonical Fact Builder<br/>groups facts, flags harmless vs. real conflicts]
+        N5[Node 5 — Rule Engine<br/>required docs, expiry, deadlines,<br/>formats, page counts, signatures]
+    end
+
+    subgraph N6G["Node 6 — Adversarial Auditor (Gemini 2.5 Flash)"]
+        N6["Probe for missed, requirement-linked<br/>defects. Cannot publish findings."]
+    end
+
+    subgraph N7G["Node 7 — Independent Evidence Verifier (Gemini 2.5 Flash)"]
+        N7["7 verification questions per candidate:<br/>requirement exists? mandatory? evidence exists?<br/>real after normalization? OCR-plausible? supported?"]
+    end
+
+    SAFETY["Deterministic safety net<br/>(TypeScript): reject any finding<br/>with no evidence citation, regardless<br/>of what Node 7 concluded"]
+
+    subgraph N8G["Node 8 — Human Confirmation Gate (Gemini 2.5 Flash)"]
+        N8[Ask only materially-relevant<br/>questions; record answers separately]
+    end
+
+    subgraph N9G["Node 9 — Correction Planner (Gemini 2.5 Flash)"]
+        N9[Prioritized, evidence-cited<br/>correction checklist]
+    end
+
+    HUMAN{{Student}}
+    OUT[Verified correction checklist<br/>+ full workflow trace]
+
+    BASELINE["Baseline: single mega-prompt<br/>same model, same documents"]
+    COMPARE[["/benchmark — precision, recall, F1,<br/>evidence coverage, hallucination rate,<br/>repeatability, prompt-injection resistance,<br/>latency, token usage"]]
+
+    I1 --> N1
+    I2 --> N2
+    I3 --> N2
+    N2 --> N3
+    N1 --> N4
+    N3 --> N4
+    N4 --> N5
+    N1 --> N5
+    N5 --> N6
+    N5 -->|deterministic candidates| N7
+    N6 -->|adversarial candidates| N7
+    N7 -->|verified| SAFETY
+    N7 -->|rejected| SAFETY
+    N7 -->|escalate_to_student| N8
+    N8 --> HUMAN
+    HUMAN -->|answer, recorded separately| SAFETY
+    SAFETY --> N9
+    N9 --> OUT
+
+    I1 -.same documents.-> BASELINE
+    I2 -.-> BASELINE
+    I3 -.-> BASELINE
+    BASELINE --> COMPARE
+    OUT --> COMPARE
+
+    classDef llm fill:#eef4fb,stroke:#4a6fa5,color:#1a2b3c;
+    classDef det fill:#fdf3e3,stroke:#b8860b,color:#1a2b3c;
+    classDef human fill:#f7e9e9,stroke:#b34747,color:#1a2b3c;
+    classDef out fill:#eafbea,stroke:#3a7d3a,color:#1a2b3c;
+    class N1,N2,N3,N6,N7,N8,N9 llm;
+    class N4,N5,SAFETY det;
+    class HUMAN human;
+    class OUT,COMPARE out;

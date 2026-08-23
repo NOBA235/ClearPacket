@@ -1,0 +1,15 @@
+{
+  "packetId": "packet-a",
+  "label": "Packet A — Clean",
+  "submissionDate": "2026-03-15",
+  "plantedDefectCount": 0,
+  "defects": [
+    {
+      "id": "a-gt-category-cert-escalation",
+      "matchesCategory": "required_document",
+      "matchesTitleIncludes": "category_certificate",
+      "description": "Category Certificate condition can't be resolved deterministically (applicant's category isn't stated) — correct behavior is to escalate for confirmation, not assert a defect.",
+      "isExpectedEscalation": true
+    }
+  ]
+}

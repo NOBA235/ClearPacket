@@ -1,0 +1,19 @@
+{
+  "packetId": "packet-b",
+  "label": "Packet B — Ten Administrative Defects",
+  "submissionDate": "2026-03-15",
+  "plantedDefectCount": 10,
+  "defects": [
+    { "id": "b-gt-1-name-mismatch", "matchesCategory": "cross_document_consistency", "matchesTitleIncludes": "full name", "description": "Middle-name mismatch: application form 'Wonthong Yeptho' vs identity document 'Wonthong T. Yeptho'." },
+    { "id": "b-gt-2-dob-mismatch", "matchesCategory": "cross_document_consistency", "matchesTitleIncludes": "date of birth", "description": "Date-of-birth mismatch between application form and identity document." },
+    { "id": "b-gt-3-expired-income", "matchesCategory": "document_validity", "matchesDocument": "b-income", "description": "Income certificate expired before the submission date." },
+    { "id": "b-gt-4-wrong-fy", "matchesCategory": "field_rule", "matchesTitleIncludes": "financial year", "description": "Income certificate issued for the wrong financial year (2024-25 instead of 2025-26)." },
+    { "id": "b-gt-5-missing-signature", "matchesCategory": "signature", "description": "Application form has no detected signature." },
+    { "id": "b-gt-6-gpa-below-minimum", "matchesCategory": "field_rule", "matchesTitleIncludes": "gpa", "description": "Transcript CGPA (5.4) is below the required minimum (6.0)." },
+    { "id": "b-gt-7-missing-transcript-page", "matchesCategory": "format", "matchesDocument": "b-transcript", "description": "Transcript uploaded with only 1 of the required 2 pages." },
+    { "id": "b-gt-8-account-holder-mismatch", "matchesCategory": "cross_document_consistency", "matchesTitleIncludes": "bank account holder", "description": "Bank statement account holder ('W. Yeptho') does not match applicant name ('Wonthong Yeptho')." },
+    { "id": "b-gt-9-unsupported-format", "matchesCategory": "format", "matchesDocument": "b-id", "description": "Identity document uploaded as an unsupported file type (image/heic)." },
+    { "id": "b-gt-10-missing-residence-cert", "matchesCategory": "required_document", "matchesTitleIncludes": "residence_certificate", "description": "No Residence Certificate uploaded." },
+    { "id": "b-gt-category-cert-escalation", "matchesCategory": "required_document", "matchesTitleIncludes": "category_certificate", "description": "Expected escalation for the unresolvable conditional Category Certificate requirement.", "isExpectedEscalation": true }
+  ]
+}

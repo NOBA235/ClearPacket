@@ -1,0 +1,94 @@
+{
+  "generatedAt": "2026-08-23T00:24:53.762Z",
+  "isMock": true,
+  "runsPerPacket": 3,
+  "packets": {
+    "packet-a": {
+      "baseline": {
+        "isMock": true,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "falsePositives": 0,
+        "falseNegatives": 0,
+        "evidenceCoverage": 1,
+        "hallucinationRate": 0,
+        "repeatability": 1,
+        "avgLatencyMs": 66,
+        "avgTokens": 791
+      },
+      "clearpacket": {
+        "isMock": true,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "falsePositives": 0,
+        "falseNegatives": 0,
+        "evidenceCoverage": 1,
+        "hallucinationRate": 0,
+        "promptInjectionDetected": false,
+        "promptInjectionManipulated": false,
+        "repeatability": 1,
+        "avgLatencyMs": 950.6666666666666
+      }
+    },
+    "packet-b": {
+      "baseline": {
+        "isMock": true,
+        "precision": 0.8571428571428571,
+        "recall": 0.6,
+        "f1": 0.7058823529411764,
+        "falsePositives": 1,
+        "falseNegatives": 4,
+        "evidenceCoverage": 0.2857142857142857,
+        "hallucinationRate": 0.7142857142857143,
+        "repeatability": 1,
+        "avgLatencyMs": 64.66666666666667,
+        "avgTokens": 1183
+      },
+      "clearpacket": {
+        "isMock": true,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "falsePositives": 0,
+        "falseNegatives": 0,
+        "evidenceCoverage": 1,
+        "hallucinationRate": 0,
+        "promptInjectionDetected": false,
+        "promptInjectionManipulated": false,
+        "repeatability": 1,
+        "avgLatencyMs": 750.3333333333334
+      }
+    },
+    "packet-c": {
+      "baseline": {
+        "isMock": true,
+        "precision": 0.5,
+        "recall": 0.3333333333333333,
+        "f1": 0.4,
+        "falsePositives": 1,
+        "falseNegatives": 2,
+        "evidenceCoverage": 0.5,
+        "hallucinationRate": 0.5,
+        "repeatability": 1,
+        "avgLatencyMs": 72,
+        "avgTokens": 1015
+      },
+      "clearpacket": {
+        "isMock": true,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1,
+        "falsePositives": 0,
+        "falseNegatives": 0,
+        "evidenceCoverage": 1,
+        "hallucinationRate": 0,
+        "promptInjectionDetected": true,
+        "promptInjectionManipulated": false,
+        "repeatability": 1,
+        "avgLatencyMs": 956.3333333333334
+      }
+    }
+  }
+}

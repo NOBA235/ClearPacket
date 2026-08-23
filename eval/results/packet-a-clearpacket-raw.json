@@ -1,0 +1,305 @@
+[
+  {
+    "findings": [
+      {
+        "id": "finding-1-t2r2ch",
+        "requirementId": "req-category-certificate",
+        "severity": "review",
+        "category": "required_document",
+        "title": "Possibly missing: category_certificate (conditional)",
+        "explanation": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "affectedDocuments": [],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "confidence": 0.95,
+        "status": "human_review",
+        "origin": "deterministic"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "ci-finding-1-t2r2ch",
+        "findingId": "finding-1-t2r2ch",
+        "priority": "requires_human_review",
+        "whatAppearsWrong": "Possibly missing: category_certificate (conditional)",
+        "whyItMatters": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "relevantRequirement": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "requirementSource": "req-category-certificate",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Confirm this manually before submitting.",
+        "confidence": 0.95,
+        "humanReviewStatus": "pending"
+      }
+    ],
+    "timings": [
+      {
+        "node": "node1_requirement_compiler",
+        "latencyMs": 69,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-form",
+        "latencyMs": 66,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-form",
+        "latencyMs": 69,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-id",
+        "latencyMs": 91,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-id",
+        "latencyMs": 87,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-transcript",
+        "latencyMs": 55,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-transcript",
+        "latencyMs": 59,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-income",
+        "latencyMs": 99,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-income",
+        "latencyMs": 74,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-bank",
+        "latencyMs": 99,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-bank",
+        "latencyMs": 43,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-residence",
+        "latencyMs": 49,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-residence",
+        "latencyMs": 74,
+        "isMock": true
+      }
+    ],
+    "isMock": true
+  },
+  {
+    "findings": [
+      {
+        "id": "finding-1-jluiuz",
+        "requirementId": "req-category-certificate",
+        "severity": "review",
+        "category": "required_document",
+        "title": "Possibly missing: category_certificate (conditional)",
+        "explanation": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "affectedDocuments": [],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "confidence": 0.95,
+        "status": "human_review",
+        "origin": "deterministic"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "ci-finding-1-jluiuz",
+        "findingId": "finding-1-jluiuz",
+        "priority": "requires_human_review",
+        "whatAppearsWrong": "Possibly missing: category_certificate (conditional)",
+        "whyItMatters": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "relevantRequirement": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "requirementSource": "req-category-certificate",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Confirm this manually before submitting.",
+        "confidence": 0.95,
+        "humanReviewStatus": "pending"
+      }
+    ],
+    "timings": [
+      {
+        "node": "node1_requirement_compiler",
+        "latencyMs": 42,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-form",
+        "latencyMs": 49,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-form",
+        "latencyMs": 84,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-id",
+        "latencyMs": 96,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-id",
+        "latencyMs": 70,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-transcript",
+        "latencyMs": 87,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-transcript",
+        "latencyMs": 95,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-income",
+        "latencyMs": 74,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-income",
+        "latencyMs": 48,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-bank",
+        "latencyMs": 97,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-bank",
+        "latencyMs": 89,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-residence",
+        "latencyMs": 49,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-residence",
+        "latencyMs": 52,
+        "isMock": true
+      }
+    ],
+    "isMock": true
+  },
+  {
+    "findings": [
+      {
+        "id": "finding-1-t235c5",
+        "requirementId": "req-category-certificate",
+        "severity": "review",
+        "category": "required_document",
+        "title": "Possibly missing: category_certificate (conditional)",
+        "explanation": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "affectedDocuments": [],
+        "evidenceFactIds": [],
+        "sourceRequirementEvidence": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "confidence": 0.95,
+        "status": "human_review",
+        "origin": "deterministic"
+      }
+    ],
+    "checklist": [
+      {
+        "id": "ci-finding-1-t235c5",
+        "findingId": "finding-1-t235c5",
+        "priority": "requires_human_review",
+        "whatAppearsWrong": "Possibly missing: category_certificate (conditional)",
+        "whyItMatters": "This document is required when \"applicant belongs to a Scheduled Tribe, Scheduled Caste, or OBC category\". No document of this type was uploaded — confirm whether the condition applies to you.",
+        "relevantRequirement": "Applicants belonging to a Scheduled Tribe, Scheduled Caste, or OBC category must submit a\n    valid Category Certificate issued by a competent authority.",
+        "requirementSource": "req-category-certificate",
+        "applicantEvidence": null,
+        "recommendedNextAction": "Confirm this manually before submitting.",
+        "confidence": 0.95,
+        "humanReviewStatus": "pending"
+      }
+    ],
+    "timings": [
+      {
+        "node": "node1_requirement_compiler",
+        "latencyMs": 57,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-form",
+        "latencyMs": 84,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-form",
+        "latencyMs": 80,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-id",
+        "latencyMs": 100,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-id",
+        "latencyMs": 93,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-transcript",
+        "latencyMs": 98,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-transcript",
+        "latencyMs": 62,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-income",
+        "latencyMs": 76,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-income",
+        "latencyMs": 52,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-bank",
+        "latencyMs": 79,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-bank",
+        "latencyMs": 65,
+        "isMock": true
+      },
+      {
+        "node": "node2_document_router:a-residence",
+        "latencyMs": 82,
+        "isMock": true
+      },
+      {
+        "node": "node3_evidence_extractor:a-residence",
+        "latencyMs": 58,
+        "isMock": true
+      }
+    ],
+    "isMock": true
+  }
+]

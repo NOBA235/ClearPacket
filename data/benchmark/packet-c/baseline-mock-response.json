@@ -1,0 +1,17 @@
+{
+  "_disclaimer": "MOCK — hand-authored fixture for pipeline demonstration only. NOT a real Gemini API response. Run `npm run eval:baseline` with a real GEMINI_API_KEY for actual numbers.",
+  "findings": [
+    {
+      "title": "Application form and residence certificate list different addresses",
+      "explanation": "The application form gives the applicant's address as Ward 3, Kohima, while the residence certificate lists Chümoukedima.",
+      "severity": "warning",
+      "evidenceQuote": null
+    },
+    {
+      "title": "Issue date mismatch between income certificate and bank statement",
+      "explanation": "The income certificate is dated 15 June 2025 and the bank statement is dated 15/06/2025, which appear to be different dates.",
+      "severity": "review",
+      "evidenceQuote": "15 June 2025 / 15/06/2025"
+    }
+  ]
+}

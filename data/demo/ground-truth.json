@@ -1,0 +1,16 @@
+{
+  "packetId": "demo-aren-jamir",
+  "label": "Demo — Aren Jamir",
+  "submissionDate": "2026-03-15",
+  "plantedDefectCount": 5,
+  "defects": [
+    { "id": "demo-gt-1-missing-signature", "matchesCategory": "signature", "description": "Application form has no detected signature." },
+    { "id": "demo-gt-2-wrong-fy", "matchesCategory": "field_rule", "matchesTitleIncludes": "financial year", "description": "Income certificate issued for FY 2023-24 instead of the required 2025-26." },
+    { "id": "demo-gt-3-gpa-below-minimum", "matchesCategory": "field_rule", "matchesTitleIncludes": "gpa", "description": "Transcript CGPA (5.8) is below the required minimum (6.0)." },
+    { "id": "demo-gt-4-missing-residence-cert", "matchesCategory": "required_document", "matchesTitleIncludes": "residence_certificate", "description": "No Residence Certificate uploaded." },
+    { "id": "demo-gt-5-unsupported-format", "matchesCategory": "format", "matchesDocument": "demo-id", "description": "Identity document uploaded as an unsupported file type (image/heic)." },
+    { "id": "demo-gt-6-prompt-injection", "matchesCategory": "prompt_injection_detected", "description": "Embedded instruction-override attempt in a forged supplementary note." },
+    { "id": "demo-gt-category-cert-escalation", "matchesCategory": "required_document", "matchesTitleIncludes": "category_certificate", "description": "Unresolvable conditional Category Certificate requirement — correct behavior is to escalate for confirmation.", "isExpectedEscalation": true },
+    { "id": "demo-gt-ambiguous-address", "matchesCategory": "needs_confirmation", "matchesDocument": "demo-form", "description": "Address is illegible on a faint photocopy — the one ambiguous value requiring human confirmation.", "isExpectedEscalation": true }
+  ]
+}

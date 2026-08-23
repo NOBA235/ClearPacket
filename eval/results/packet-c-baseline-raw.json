@@ -1,0 +1,68 @@
+[
+  {
+    "findings": [
+      {
+        "title": "Application form and residence certificate list different addresses",
+        "explanation": "The application form gives the applicant's address as Ward 3, Kohima, while the residence certificate lists Chümoukedima.",
+        "severity": "warning",
+        "evidenceQuote": null
+      },
+      {
+        "title": "Issue date mismatch between income certificate and bank statement",
+        "explanation": "The income certificate is dated 15 June 2025 and the bank statement is dated 15/06/2025, which appear to be different dates.",
+        "severity": "review",
+        "evidenceQuote": "15 June 2025 / 15/06/2025"
+      }
+    ],
+    "latencyMs": 84,
+    "isMock": true,
+    "usage": {
+      "inputTokens": 829,
+      "outputTokens": 186
+    }
+  },
+  {
+    "findings": [
+      {
+        "title": "Application form and residence certificate list different addresses",
+        "explanation": "The application form gives the applicant's address as Ward 3, Kohima, while the residence certificate lists Chümoukedima.",
+        "severity": "warning",
+        "evidenceQuote": null
+      },
+      {
+        "title": "Issue date mismatch between income certificate and bank statement",
+        "explanation": "The income certificate is dated 15 June 2025 and the bank statement is dated 15/06/2025, which appear to be different dates.",
+        "severity": "review",
+        "evidenceQuote": "15 June 2025 / 15/06/2025"
+      }
+    ],
+    "latencyMs": 91,
+    "isMock": true,
+    "usage": {
+      "inputTokens": 829,
+      "outputTokens": 186
+    }
+  },
+  {
+    "findings": [
+      {
+        "title": "Application form and residence certificate list different addresses",
+        "explanation": "The application form gives the applicant's address as Ward 3, Kohima, while the residence certificate lists Chümoukedima.",
+        "severity": "warning",
+        "evidenceQuote": null
+      },
+      {
+        "title": "Issue date mismatch between income certificate and bank statement",
+        "explanation": "The income certificate is dated 15 June 2025 and the bank statement is dated 15/06/2025, which appear to be different dates.",
+        "severity": "review",
+        "evidenceQuote": "15 June 2025 / 15/06/2025"
+      }
+    ],
+    "latencyMs": 41,
+    "isMock": true,
+    "usage": {
+      "inputTokens": 829,
+      "outputTokens": 186
+    }
+  }
+]
