@@ -57,12 +57,6 @@ export default function LoginPage() {
         <p style={{ fontSize: 13, color: "var(--color-text-muted)", marginTop: 14 }}>
           No account? <Link href="/auth/signup">Create one</Link>
         </p>
-        <p style={{ fontSize: 12, color: "var(--color-text-muted)", marginTop: 24 }}>
-          Requires <code style={{ fontFamily: "var(--font-mono)" }}>NEXT_PUBLIC_SUPABASE_URL</code> and{" "}
-          <code style={{ fontFamily: "var(--font-mono)" }}>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> configured — see{" "}
-          <code style={{ fontFamily: "var(--font-mono)" }}>.env.example</code>. You can try the workflow itself
-          without an account on the <Link href="/audit/new">audit page</Link>.
-        </p>
       </main>
     </>
   );
